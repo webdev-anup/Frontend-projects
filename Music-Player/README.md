@@ -103,8 +103,8 @@ open index.html
 ## 👤 Author
 
 **Anup Patwa**
-- GitHub: [@anup-patwa](https://github.com/anup-patwa)
-- LinkedIn: [linkedin.com/in/anup-patwa](https://linkedin.com/in/anup-patwa)
+- GitHub: [@anup-patwa](https://github.com/webdev-anup)
+- LinkedIn: [linkedin.com/in/anup-patwa](https://www.linkedin.com/in/anup-patwa-8b91b8372/)
 
 ---
 
