@@ -56,7 +56,7 @@ const repeatBtn = document.getElementById("repeatBtn");
 let currentIndex = 0;
 let isPlaying = false;
 let isShuffle = false;
-let repeatMode = "off"; // off | one | all
+let repeatMode = "off"; 
 let lastVolume = Number(volumeInput.value) || 0.8;
 
 // ─── Initialize ────────────────────────────────────────────────
@@ -137,7 +137,7 @@ function updatePlayButton() {
 
 // ─── Next Track ────────────────────────────────────────────────
 function nextTrack() {
-  const wasPlaying = isPlaying; // ✅ FIX: save current state
+  const wasPlaying = isPlaying; 
 
   if (isShuffle) {
     let next;
@@ -149,17 +149,17 @@ function nextTrack() {
       } while (next === currentIndex);
     }
     loadTrack(next);
-    if (wasPlaying) play(); // ✅ sirf tab play karo jab pehle chal raha tha
+    if (wasPlaying) play();
     return;
   }
 
   if (currentIndex < TRACKS.length - 1) {
     loadTrack(currentIndex + 1);
-    if (wasPlaying) play(); // ✅ fix
+    if (wasPlaying) play(); 
   } else {
     if (repeatMode === "all") {
       loadTrack(0);
-      if (wasPlaying) play(); // ✅ fix
+      if (wasPlaying) play(); 
     } else {
       pause();
       audio.currentTime = 0;
@@ -169,7 +169,7 @@ function nextTrack() {
 
 // ─── Prev Track ────────────────────────────────────────────────
 function prevTrack() {
-  const wasPlaying = isPlaying; // ✅ FIX: save current state
+  const wasPlaying = isPlaying;
 
   if (audio.currentTime > 5) {
     audio.currentTime = 0;
@@ -178,7 +178,7 @@ function prevTrack() {
 
   if (currentIndex > 0) {
     loadTrack(currentIndex - 1);
-    if (wasPlaying) play(); // ✅ fix
+    if (wasPlaying) play(); 
   } else {
     audio.currentTime = 0;
   }
