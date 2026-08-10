@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="card">
+      <div class="header-row">
+        <div>
+          <h1>QR Code Generator</h1>
+          <p>Create QR codes for text, URLs, emails, phone numbers, or Wi-Fi details.</p>
+        </div>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode">🌙</button>
+      </div>
+
+      <label class="field-label" for="typeSelect">QR type</label>
+      <select id="typeSelect">
+        <option value="text">Text / URL</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+        <option value="wifi">Wi-Fi</option>
+      </select>
+
+      <div id="textGroup" class="input-group">
+        <label class="field-label" for="textInput">Content</label>
+        <input id="textInput" type="text" placeholder="Enter text or URL" value="https://example.com" />
+      </div>
+
+      <div id="emailGroup" class="input-group hidden">
+        <label class="field-label" for="emailInput">Email address</label>
+        <input id="emailInput" type="email" placeholder="name@example.com" />
+      </div>
+
+      <div id="phoneGroup" class="input-group hidden">
+        <label class="field-label" for="phoneInput">Phone number</label>
+        <input id="phoneInput" type="tel" placeholder="+1 234 567 890" />
+      </div>
+
+      <div id="wifiGroup" class="input-group hidden">
+        <label class="field-label" for="wifiSsid">Wi-Fi SSID</label>
+        <input id="wifiSsid" type="text" placeholder="MyNetwork" />
+        <label class="field-label" for="wifiPassword">Password</label>
+        <input id="wifiPassword" type="password" placeholder="Password" />
+        <label class="field-label" for="wifiEncryption">Encryption</label>
+        <select id="wifiEncryption">
+          <option value="WPA">WPA/WPA2</option>
+          <option value="WEP">WEP</option>
+          <option value="nopass">No password</option>
+        </select>
+      </div>
+
+      <div class="action-row">
+        <button id="generateBtn" class="primary-btn" type="button">Generate QR Code</button>
+        <button id="downloadBtn" class="secondary-btn" type="button" disabled>Download PNG</button>
+      </div>
+
+      <div id="qrcode" class="qr-box"></div>
+      <p id="message" class="message">QR code will appear here.</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
